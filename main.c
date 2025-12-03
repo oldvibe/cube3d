@@ -1,7 +1,5 @@
 #include "cub3d.h"
 
-#include "cub3d.h"
-
 int file_lines(char *filename)
 {
     int     fd;
@@ -53,25 +51,6 @@ char **read_lines(t_gc *gc, char *filename)
     close(fd);
     return (lines);
 }
-// void init_data(t_data *data)
-// {
-//     data->north_tex = NULL;
-//     data->south_tex = NULL;
-//     data->east_tex = NULL;
-//     data->west_tex = NULL;
-//     data->NO_flag = 0;
-//     data->SO_flag = 0;
-//     data->EA_flag = 0;
-//     data->WE_flag = 0;
-//     data->f_flag = 0;
-//     data->c_flag = 0;
-//     data->floor.r = -1;
-//     data->floor.g = -1;
-//     data->floor.b = -1;
-//     data->ceilling.r = -1;
-//     data->ceilling.g = -1;
-//     data->ceilling.b = -1;
-// }
 
 void	error_exit(t_game *game, char *msg)
 {
@@ -143,10 +122,10 @@ int	main(int argc, char **argv)
 		error_exit(&game, "Failed to parse file");
 	raycasting(&game);
 
-	mlx_hook(game.win, 2, 1L << 0, (int (*)())handle_keypress, &game);
-	mlx_hook(game.win, 3, 1L << 1, (int (*)())handle_keyrelease, &game);
-	mlx_hook(game.win, 17, 1L << 17, (int (*)())exit_game, &game);
-	mlx_loop_hook(game.mlx, (int (*)())game_loop, &game);
+	mlx_hook(game.win, 2, 1L << 0, handle_keypress, &game);
+	mlx_hook(game.win, 3, 1L << 1, handle_keyrelease, &game);
+	mlx_hook(game.win, 17, 1L << 17, exit_game, &game);
+	mlx_loop_hook(game.mlx, game_loop, &game);
 	
 	mlx_loop(game.mlx);
 	return (0);

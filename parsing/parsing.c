@@ -1,4 +1,4 @@
-#include "cub3d.h"
+#include "../cub3d.h"
 
 static int  load_texture(t_game *game, t_texture *tex, char *path)
 {

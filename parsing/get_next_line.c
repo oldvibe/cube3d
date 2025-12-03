@@ -1,4 +1,4 @@
-#include "cub3d.h"
+#include "../cub3d.h"
 
 static char	*join_and_free(t_gc *gc, char *s1, char *s2)
 {

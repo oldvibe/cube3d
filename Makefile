@@ -1,19 +1,24 @@
 NAME = cub3D
 
 SRCS = main.c \
-       garbage_collector.c \
        utils/utils.c \
        utils/utils2.c \
        utils/utils3.c \
-       get_next_line.c \
-       parsing.c \
-       pars.c \
-       pars_utils.c \
-       pars_utils2.c \
-       pars_map.c \
-       pars_map_utils.c \
-       raycasting.c \
-       mouvement.c 
+       parsing/get_next_line.c \
+       parsing/parsing.c \
+       parsing/pars.c \
+       parsing/pars_utils.c \
+       parsing/pars_utils2.c \
+       parsing/pars_map.c \
+       parsing/pars_map_utils.c \
+       raycasting/raycasting.c \
+       raycasting/ray_init.c \
+       raycasting/ray_draw.c \
+       raycasting/ray_dda.c \
+       mouvement/mouvement.c \
+       mouvement/rotation.c \
+       mouvement/hooks.c \
+       garbage_collector/garbage_collector.c
 
 OBJS = $(SRCS:.c=.o)
 

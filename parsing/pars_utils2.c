@@ -1,4 +1,4 @@
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int pars_no(t_gc *gc, char *line, t_data *data)
 {

@@ -7,7 +7,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "minilibx-linux/mlx.h"
-# include "garbage_colector.h"
+# include "garbage_collector/garbage_colector.h"
 # define TEX_WIDTH 64
 # define TEX_HEIGHT 64
 # define WIN_WIDTH 1280
@@ -140,11 +140,7 @@ typedef struct s_game
 int     parsing(t_gc *gc, char *filename, t_data *data, t_map **map);
 int 	parsing1(t_gc *gc, char *filename, t_data *data, t_map **map);
 int		parse_file(char *filename, t_game *game);
-int		parse_map(char *filename, t_game *game);
 int		parse_textures(char *line, t_game *game);
-int		check_map_validity(t_game *game);
-
-/*                          other */
 int     is_line_empty(char *line);
 int     is_map_line(char *line);
 int     check_identifier(t_gc *gc, char *line, t_data *data);
@@ -171,7 +167,7 @@ void	move_right(t_game *game);
 void	rotate_left(t_game *game);
 void	rotate_right(t_game *game);
 int		handle_keypress(int keycode, t_game *game);
-int		handle_keyrelease(int keycode, t_game *game); // NEW
+int		handle_keyrelease(int keycode, t_game *game);
 
 
 // Utils
